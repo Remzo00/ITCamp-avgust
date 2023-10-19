@@ -13,4 +13,10 @@ document.write("Hello world")
 //undefined -> sluzi za prikaz podataka koji nisu definisani
 //null -> odsustvo vrednosti
 
-var x = 5
+//variajbla je "konteiner" u kojem se skladiste podaci i tipovi
+var x = 5 //Tacno
+
+// var neka varijabla = 10 //netacno
+
+var neka_varijabla //tacno
+var nekaVarijabla //tacno (camel case)
