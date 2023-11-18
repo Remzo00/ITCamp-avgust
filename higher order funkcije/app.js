@@ -49,3 +49,19 @@ const old = ages.filter(function (age) {
 });
 
 console.log(old);
+
+const totalAges = ages.reduce(function (total, age) {
+  return total + age;
+});
+
+console.log(totalAges);
+
+const brojevi = [3, -1, 7, 2, -5, 8];
+const ukupnaSumaPozitivnih = brojevi.reduce(function (total, pozitivniBroj) {
+  if (pozitivniBroj > 0) {
+    return total + pozitivniBroj;
+  }
+  return total;
+});
+
+console.log(ukupnaSumaPozitivnih);
