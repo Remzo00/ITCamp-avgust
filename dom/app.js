@@ -11,9 +11,19 @@
 
 //getElementById -> Uzima element po njegovom ID-u
 
-const noviElement = document.getElementById("naslov");
-noviElement.innerText = "tekst";
-// noviElement.style.color = "blue";
+// const noviElement = document.getElementById("naslov");
+const noviElement = document.querySelector(".naslov");
+const items = document.getElementsByClassName("list-group-fruit");
+items[1].style.backgroundColor = "red";
+items[0].innerText = "nesto";
+// items.style.color = "green";
+
+for (let i = 0; i < items.length; i++) {
+  items[i].style.backgroundColor = "red";
+  console.log(items);
+}
+
+noviElement.style.color = "blue";
 
 function boja() {
   noviElement.style.color = "red";
