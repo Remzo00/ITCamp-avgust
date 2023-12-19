@@ -28,3 +28,24 @@ noviElement.style.color = "blue";
 function boja() {
   noviElement.style.color = "red";
 }
+
+function validacija() {
+  const email = document.forms["myForm"]["email"];
+  const pass = document.forms["myForm"]["password"];
+  const confirm = document.forms["myForm"]["confirmPass"];
+
+  if (email.value.length < 9) {
+    alert("Popuni email");
+    return false;
+  }
+
+  if (pass.value.length < 6) {
+    alert("Password mora imati vise karaktera");
+    return false;
+  }
+
+  if (confirm.value !== pass.value) {
+    alert("Sifre moraju biti iste");
+    return false;
+  }
+}
