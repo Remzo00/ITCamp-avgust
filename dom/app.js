@@ -11,8 +11,8 @@
 
 //getElementById -> Uzima element po njegovom ID-u
 
-// const noviElement = document.getElementById("naslov");
-const noviElement = document.querySelector(".naslov");
+const noviElement = document.getElementById("naslov");
+// const noviElement = document.querySelector(".naslov");
 const items = document.getElementsByClassName("list-group-fruit");
 items[1].style.backgroundColor = "red";
 items[0].innerText = "nesto";
@@ -49,3 +49,16 @@ function validacija() {
     return false;
   }
 }
+
+//eventListener
+const modal = document.getElementById("modal");
+const modalButton = document.getElementById("modal-button");
+const modalCloseButton = document.querySelector(".close");
+
+modalButton.addEventListener("click", function () {
+  modal.style.display = "block";
+});
+
+modalCloseButton.addEventListener("click", function () {
+  modal.style.display = "none";
+});
