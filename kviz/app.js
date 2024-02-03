@@ -46,10 +46,29 @@ function showQuestion(question) {
   question.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerText = answer.text;
-    button.classList.add("btn");
     button.addEventListener("click", () => selectAnswer(answer));
     answerButtons.appendChild(button);
   });
 }
 
+function selectAnswer(answer) {
+  const correct = answer.correct;
+  if (correct) {
+    score++;
+  }
+}
+
+function nextQuestion() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < quizData.length) {
+    showQuestion(quizData[currentQuestionIndex]);
+  } else {
+    finishQuiz();
+  }
+}
+
+function finishQuiz() {
+  questionContainer.innerHTML = `Vaš rezultat: ${score} od ${quizData.length}`;
+  answerButtons.innerHTML = "";
+}
 startQuiz();
