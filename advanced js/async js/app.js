@@ -39,3 +39,38 @@ fetchData()
   });
 
 //Async/Await
+
+const fecthDataFromServer = async () => {
+  const data = {
+    id: 1,
+    name: "Neko",
+  };
+  return data;
+};
+
+const displayData = async () => {
+  try {
+    const data = await fecthDataFromServer();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+displayData();
+
+const getData = async () => {
+  try {
+    const response = await fetch("https://fakestoreapi.com/products?limit=5");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getData();
+
+//API
+//json
+//xml
