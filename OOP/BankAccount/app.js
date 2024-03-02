@@ -25,3 +25,39 @@
 // Kreirajte novu instancu bankovnog računa sa određenim brojem računa i početnim stanjem.
 // Pozovite metode deposit i withdraw da simulirate uplatu i isplatu novca.
 // Na kraju pozovite metod displayBalance da prikažete trenutno stanje računa.
+
+class BankAccount {
+  constructor(accountNumber, initialBalance) {
+    this.accountNumber = accountNumber;
+    this.initialBalance = initialBalance;
+  }
+
+  deposit(amount) {
+    this.initialBalance += amount;
+    console.log(
+      `Deposit of ${amount} successfully processed. New balance: ${this.initialBalance}`
+    );
+  }
+
+  withdraw(amount) {
+    if (amount > this.initialBalance) {
+      console.log("Insufficient funds!");
+    } else {
+      this.initialBalance -= amount;
+      console.log(
+        `Withdrawal of ${amount} successfully processed. New balance: ${this.initialBalance}`
+      );
+    }
+  }
+
+  displayBalance() {
+    console.log(`Account balance: ${this.initialBalance}`);
+  }
+}
+
+const myAccount = new BankAccount("123456789", 1000);
+myAccount.displayBalance();
+
+myAccount.deposit(500);
+myAccount.withdraw(200);
+myAccount.displayBalance();
